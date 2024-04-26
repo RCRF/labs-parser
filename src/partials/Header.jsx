@@ -1,18 +1,14 @@
 import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
-function Header({}) {
+function Header({ }) {
   const location = useLocation();
   const { pathname } = location;
 
-  const routes = ["/", "/nomograms", "/trials"];
+  const routes = ["/",];
 
   const standardRoutes = [
     "/",
-    "/nomograms",
-    "/trials/",
-    "/nomograms/",
-    "/trials",
   ];
 
   return (
@@ -22,46 +18,13 @@ function Header({}) {
           <div className="flex items-center">
             <NavLink
               to="/"
-              className={`${
-                pathname === "/" ? "text-slate-900" : null
-              } ml-4 text-slate-500 hover:text-slate-600`}
+              className={`${pathname === "/" ? "text-slate-900" : null
+                } ml-4 text-slate-500 hover:text-slate-600`}
             >
-              <div>Calculator</div>
+              <div>XCures Labs</div>
             </NavLink>
 
-            <NavLink
-              to="/nomograms"
-              className={`${
-                pathname === "/nomograms" ? "text-black" : null
-              } ml-4 text-slate-500 hover:text-slate-600`}
-            >
-              <div>Nomograms</div>
-            </NavLink>
 
-            <NavLink
-              to="/trials"
-              className={`${
-                pathname === "/trials" || pathname === "/trials/"
-                  ? "text-black"
-                  : null
-              } ml-4 text-slate-500 hover:text-slate-600`}
-            >
-              <div className="flex flex-row gap-1">
-                <span className="hidden lg:block">Clinical</span>Trials
-              </div>
-            </NavLink>
-
-            <NavLink
-              to="/visualizations"
-              className={`${
-                pathname === "/visualizations" ||
-                pathname === "/visualizations/"
-                  ? "text-black"
-                  : null
-              } ml-4 text-slate-500 hover:text-slate-600`}
-            >
-              <div>Visualize</div>
-            </NavLink>
           </div>
         </div>
       </div>

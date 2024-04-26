@@ -7,10 +7,6 @@ import "./charts/ChartjsConfig";
 
 // Import pages
 import Dashboard from "./pages/Dashboard";
-import Trials from "./pages/Trials";
-import Nomograms from "./pages/Nomograms";
-import Privacy from "./pages/Privacy";
-import Visual from "./pages/Visual";
 
 function App() {
   const location = useLocation();
@@ -29,18 +25,6 @@ function App() {
           path="/"
           element={<Dashboard rates={false} demographics={false} />}
         />
-        <Route
-          exact
-          path="/nomograms"
-          element={<Nomograms type="nomograms" />}
-        />
-        <Route exact path="/trials" element={<Trials type="trials" />} />
-        <Route
-          exact
-          path="/visualizations"
-          element={<Visual type="visualizations" />}
-        />
-        <Route exact path="/privacy" element={<Privacy />} />
       </Routes>
     </>
   );
